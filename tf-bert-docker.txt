@@ -1,0 +1,41 @@
+https://www.tensorflow.org/install/docker
+
+docker install for tensorflow
+
+docker pull tensorflow/tensorflow:devel-gpu
+docker run -it --name "tf-bert" tensorflow/tensorflow:devel-gpu /bin/bash
+-- creating file on docker image
+https://www.thegeekdiary.com/how-to-update-add-a-file-in-the-docker-image/
+
+docker commit -m="sentiment analysis" tensorflow/tensorflow:devel-gpu tf-bert-gpu-image
+docker commit -m="sentiment analysis" tf-bert tf-bert-gpu-image
+
+# go to the directory you want copy files to.
+docker cp da7d7293a865:project/requirements.txt .
+
+# copy to docker
+docker cp readme.txt da7d7293a865:project/readme.txt  
+
+
+# save the docker image
+docker commit da7d7293a865 tf-steamlit-bert
+
+docker commit 8c4835f2a364 tf-steamlit-bertv2
+
+# publish the streamlit port name of the container, last is our tf-steamlit image
+docker run -p 8501:8501 -it --name "container-tf-steamlit-bert" tf-steamlit-bert
+
+docker cp 8c4835f2a364:/project/start.py .
+
+
+# pushing to gcp container registry
+install google cloudSDK
+then follow these commands
+https://cloud.google.com/container-registry/docs/advanced-authentication#gcloud-helper
+
+docker tag tf-steamlit-bertv2 gcr.io/sentimentanaylsis28518/tf-steamlit-bertv2
+docker push gcr.io/sentimentanaylsis28518/tf-steamlit-bertv2
+
+.\docker-credential-gcr configure-docker --token-source C:\Users\personal\ai\tf-sentiment\sentimentanaylsis28518-947178e9a3dd.json 
+
+gcloud auth activate-service-account serv-cont-storage@sentimentanaylsis28518.iam.gserviceaccount.com --key-file=C:\Users\email\Downloads\sentimentanaylsis28518-2e8aebdeaf74.json
