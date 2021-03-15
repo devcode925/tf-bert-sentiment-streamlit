@@ -1,3 +1,8 @@
+model specs:
+https://tfhub.dev/tensorflow/small_bert/bert_en_uncased_L-4_H-512_A-8/1
+This TF Hub model uses the implementation of BERT from the TensorFlow Models repository on GitHub at tensorflow/models/official/nlp/bert. It uses L=4 hidden layers (i.e., Transformer blocks), a hidden size of H=512, and A=8 attention heads. 
+For other model sizes, see the BERT collection.
+
 https://www.tensorflow.org/install/docker
 
 docker install for tensorflow
