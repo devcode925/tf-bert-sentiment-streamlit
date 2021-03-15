@@ -1,5 +1,5 @@
-# tf-bert-sentiment-steamlit
-sentiment analysis using bert and steamlit
+# tf-bert-sentiment-streamlit
+sentiment analysis using bert and streamlit
 
 Inspects the given text and identifies the prevailing emotional opinion within the text, especially to determine a writer\'s attitude as positive, or negative.
 "100" is a perfect Positive score. 50 would be consider neutral.
