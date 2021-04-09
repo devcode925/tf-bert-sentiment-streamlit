@@ -109,7 +109,7 @@ Pygments==2.8.1
 pygobject>=3.26
 pyparsing==2.4.7
 pyrsistent==0.17.3
-python-apt==1.6.5+ubuntu0.5
+#python-apt==1.6.5+ubuntu0.5
 python-dateutil==2.8.1
 python-slugify==4.0.1
 pytz==2021.1
