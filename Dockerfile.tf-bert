@@ -1,0 +1,24 @@
+FROM tensorflow/tensorflow:devel-gpu
+
+WORKDIR /project
+
+EXPOSE 8501
+ENV GOOGLE_APPLICATION_CREDENTIALS=/project/ml-ai.json
+
+WORKDIR /project
+RUN mkdir /project/config
+RUN mkdir /project/logs
+RUN mkdir /project/variables
+
+COPY ml-ai.json /project
+
+COPY start.py /project
+COPY bert_sentiment.py /project
+copy requirements.txt /project
+copy saved_model.pb /project/imdb_bert/saved_model.pb
+copy variables/* /project/variables
+
+RUN pip3 install -r requirements.txt
+
+# command to run on container start
+CMD [ "/bin/bash" ]
