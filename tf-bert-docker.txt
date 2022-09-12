@@ -44,3 +44,5 @@ docker push gcr.io/sentimentanaylsis28518/tf-steamlit-bertv2
 .\docker-credential-gcr configure-docker --token-source C:\Users\personal\ai\tf-sentiment\sentimentanaylsis28518-947178e9a3dd.json 
 
 gcloud auth activate-service-account serv-cont-storage@sentimentanaylsis28518.iam.gserviceaccount.com --key-file=C:\Users\email\Downloads\sentimentanaylsis28518-2e8aebdeaf74.json
+
+docker exec -it eb90cd63df90 /bin/bash
